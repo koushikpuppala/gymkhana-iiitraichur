@@ -16,6 +16,8 @@
 		"incremental": true,
 		"baseUrl": ".",
 		"paths": {
+			"authentication/*": ["authentication/*"],
+			"database/*": ["database/*"],
 			"types/*": ["types/*"]
 		}
 	},
