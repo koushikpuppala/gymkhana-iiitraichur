@@ -1,4 +1,8 @@
 export interface Config {
+	webhook: {
+		id: string
+		token: string
+	}
 	mongoDB: {
 		user: string
 		pass: string

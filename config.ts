@@ -4,6 +4,10 @@ import { Config } from 'types/config'
 dotenv.config()
 
 export const config: Config = {
+	webhook: {
+		id: process.env.WEBHOOK_ID as string,
+		token: process.env.WEBHOOK_TOKEN as string,
+	},
 	mongoDB: {
 		user: process.env.MONGODB_USER as string,
 		pass: process.env.MONGODB_PASS as string,
