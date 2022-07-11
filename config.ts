@@ -1,25 +1,22 @@
-import dotenv from 'dotenv'
 import { Config } from 'types/config'
-
-dotenv.config()
 
 export const config: Config = {
 	webhook: {
-		id: process.env.WEBHOOK_ID as string,
-		token: process.env.WEBHOOK_TOKEN as string,
+		id: process.env.NEXT_PUBLIC_WEBHOOK_ID as string,
+		token: process.env.NEXT_PUBLIC_WEBHOOK_TOKEN as string,
 	},
 	mongoDB: {
-		user: process.env.MONGODB_USER as string,
-		pass: process.env.MONGODB_PASS as string,
-		uri: process.env.MONGODB_URI as string,
+		user: process.env.NEXT_PUBLIC_MONGODB_USER as string,
+		pass: process.env.NEXT_PUBLIC_MONGODB_PASS as string,
+		uri: process.env.NEXT_PUBLIC_MONGODB_URI as string,
 	},
 	firebaseConfig: {
-		apiKey: process.env.FIREBASE_API_KEY as string,
-		authDomain: process.env.FIREBASE_AUTH_DOMAIN as string,
-		projectId: process.env.FIREBASE_PROJECT_ID as string,
-		storageBucket: process.env.FIREBASE_STORAGE_BUCKET as string,
-		messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID as string,
-		appId: process.env.FIREBASE_APP_ID as string,
-		measurementId: process.env.FIREBASE_MEASUREMENT_ID as string,
+		apiKey: process.env.NEXT_PUBLIC_API_KEY as string,
+		authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN as string,
+		projectId: process.env.NEXT_PUBLIC_PROJECT_ID as string,
+		storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET as string,
+		messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID as string,
+		appId: process.env.NEXT_PUBLIC_APP_ID as string,
+		measurementId: process.env.NEXT_PUBLIC_MEASUREMENT_ID as string,
 	},
 }

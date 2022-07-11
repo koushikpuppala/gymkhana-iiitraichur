@@ -1,1 +1,2 @@
-export { Storage, AuthService } from 'authentication/Auth'
+export { AuthService } from 'authentication/Auth'
+export { Storage } from 'authentication/Storage'

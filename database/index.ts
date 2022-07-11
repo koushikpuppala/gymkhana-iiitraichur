@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 import { config } from 'config'
 import { DatabaseType, MongoDBOptions } from 'types/database'
 
-export const database: DatabaseType = {
+export const Database: DatabaseType = {
 	connect: () => {
 		const options: MongoDBOptions = {
 			autoIndex: false,

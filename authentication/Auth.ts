@@ -1,9 +1,8 @@
 import { GoogleAuthProvider, signInWithPopup, Auth, getAuth } from 'firebase/auth'
+import { AuthServiceType } from 'types/authentication'
 import { initializeApp, getApps } from 'firebase/app'
 import { getAnalytics } from 'firebase/analytics'
-import { AuthServiceType } from 'types/authentication'
 import { config } from 'config'
-import { FirebaseStorage, getStorage } from 'firebase/storage'
 
 if (!getApps().length) {
 	initializeApp(config.firebaseConfig)
@@ -16,23 +15,11 @@ if (!getApps().length) {
 
 const auth: Auth = getAuth()
 
-const storage: FirebaseStorage = getStorage(initializeApp(config.firebaseConfig))
-export const Storage = {}
-
 export const AuthService: AuthServiceType = {
 	login: async () => {
 		const provider: GoogleAuthProvider = new GoogleAuthProvider()
-		await signInWithPopup(auth, provider)
-			.then(UserCredential => {
-				return {
-					user: UserCredential.user,
-				}
-			})
-			.catch(err => {
-				return {
-					error: err.message,
-				}
-			})
+		const userCredential = await signInWithPopup(auth, provider)
+		return userCredential.user
 	},
 	logout: async () => {
 		await auth.signOut()
